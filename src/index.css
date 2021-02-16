@@ -1,15 +1,11 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+main {
+  flex: 1 0 auto;
 }
 
 .card-image:hover,
@@ -19,4 +15,27 @@ code {
 
 a.view-recipe:hover {
   color: brown;
+}
+
+.margin-tb {
+  margin: 2rem auto 2rem;
+}
+/*
+.padding-tb {
+  padding-top: 5px;
+  margin-top: 10px;
+} */
+
+.ingredients-section {
+  margin: 5em auto 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.card-action:hover {
+  background-color: rgb(218, 218, 202);
+}
+
+p span {
+  font-size: medium;
 }

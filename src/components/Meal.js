@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Meal = ({ meal }) => {
   return (
-    <div className="col s12 m3 ">
+    <div className="col s12 m4 l3 ">
       <div className="card small hoverable">
         <div className="activator card-image">
           <img
             className="responsive-img activator"
-            alt="food"
+            alt={meal.strMeal}
             src={meal.strMealThumb}
             loading="lazy"
           />
