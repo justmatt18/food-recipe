@@ -47,16 +47,5 @@ const getAreas = async () => {
   return data.meals;
 };
 
-//? Get Images
-const getImages = (arr) => {
-  let imgs = [];
-  arr.map(async (value) => {
-    const res = await fetch(`${API.Image}/${value}.png`);
-    const data = await res.json();
-    imgs.push(data);
-  });
-  return imgs;
-};
-
-export { mealByName, getMeals, getAreas, mealDetails, getImages };
+export { mealByName, getMeals, getAreas, mealDetails };
 export default API;

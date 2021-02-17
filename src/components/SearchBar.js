@@ -1,17 +1,12 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SearchBar = ({ search, setSearch }) => {
-  let history = useHistory();
-
-  const toHome = () => {
-    history.push("/");
-  };
   return (
     <nav>
       <div className="nav-wrapper brown darken-2">
-        <div className="row">
-          <div className="col s10 m11">
+        <div className="row container">
+          <div className="col s12 m11">
             <form className="">
               <div className="input-field">
                 <input
@@ -28,10 +23,10 @@ const SearchBar = ({ search, setSearch }) => {
               </div>
             </form>
           </div>
-          <div className="col s2 m1">
+          <div className="col m1 show-on-medium-and-up">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li>
-                <Link onClick={toHome}>Home</Link>
+                <Link to="/">Home</Link>
               </li>
             </ul>
           </div>

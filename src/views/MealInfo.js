@@ -20,7 +20,7 @@ const MealInfo = () => {
   return (
     <div className="container">
       <h1>
-        Meal ID: {id} {meal.strMeal}
+        Meal ID: {id} - {meal.strMeal}
       </h1>
     </div>
   );
