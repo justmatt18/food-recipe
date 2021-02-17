@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const PopularIngredients = () => {
-  const [imgs, setImgs] = useState([
+  const [imgs] = useState([
     {
       ingredient: "Beef",
       img: " https://www.themealdb.com/images/ingredients/Beef.png",
@@ -27,7 +27,7 @@ const PopularIngredients = () => {
       </h4>
       <div className="row container">
         {imgs.map((img) => (
-          <div className="col s12 m3">
+          <div className="col s12 m5 l3">
             <img
               className="responsive-img"
               src={img.img}
