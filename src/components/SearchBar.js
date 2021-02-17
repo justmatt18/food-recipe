@@ -1,13 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
-const SearchBar = ({ search, setSearch }) => {
+const SearchBar = () => {
+  const [search, setSearch] = useState("");
+  let history = useHistory();
+
+  const toSearchPage = () => {
+    history.push(`/search/q=${search}`);
+  };
+
   return (
     <nav>
       <div className="nav-wrapper brown darken-2">
         <div className="row container">
-          <div className="col s12 m11">
-            <form className="">
+          <div className="col s10 m6">
+            <form className="search-form" onSubmit={toSearchPage}>
               <div className="input-field">
                 <input
                   id="search"
@@ -23,8 +30,8 @@ const SearchBar = ({ search, setSearch }) => {
               </div>
             </form>
           </div>
-          <div className="col m1 show-on-medium-and-up">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <div className="col s2 m6 ">
+            <ul id="nav-mobile" class="right ">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -37,3 +44,5 @@ const SearchBar = ({ search, setSearch }) => {
 };
 
 export default SearchBar;
+// show-on-medium-and-up
+// hide-on-med-and-down
