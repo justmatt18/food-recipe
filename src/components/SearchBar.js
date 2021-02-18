@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
+import M from "materialize-css";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -9,40 +10,59 @@ const SearchBar = () => {
     history.push(`/search/q=${search}`);
   };
 
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
+
   return (
-    <nav>
-      <div className="nav-wrapper brown darken-2">
-        <div className="container">
-          <div className="row">
-            <div className="col s10">
-              <form onSubmit={toSearchPage}>
-                <div className="input-field">
+    <>
+      <nav>
+        <div class="nav-wrapper brown darken-2">
+          <div className="container">
+            <Link to="/" class="brand-logo">
+              <span>Matty Recipes</span>
+            </Link>
+            <Link to="/" data-target="mobile-demo" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </Link>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <form onSubmit={toSearchPage}>
                   <input
-                    id="search"
-                    type="search"
-                    required
-                    placeholder="Search for a Meal..."
+                    className="input-field"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
+                    type="text"
+                    placeholder="Search for a Meal..."
                   />
-                  <label className="label-icon" for="search">
-                    <i className="material-icons">search</i>
-                  </label>
-                  <i className="material-icons">close</i>
-                </div>
-              </form>
-            </div>
-            <div className="col s2">
-              <ul id="nav-mobile" class="right ">
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-              </ul>
-            </div>
+                </form>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Ingredients</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/">Ingredients</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
+    </>
   );
 };
 
