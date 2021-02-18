@@ -15,13 +15,15 @@ const SearchBar = () => {
         <div className="container">
           <div className="row">
             <div className="col s10">
-              <form>
+              <form onSubmit={toSearchPage}>
                 <div className="input-field">
                   <input
                     id="search"
                     type="search"
                     required
                     placeholder="Search for a Meal..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                   />
                   <label className="label-icon" for="search">
                     <i className="material-icons">search</i>
