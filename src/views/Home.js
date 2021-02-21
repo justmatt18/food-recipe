@@ -10,13 +10,16 @@ const Home = () => {
   const [latestMeals] = useState(latestFood);
 
   useEffect(() => {
-    const results = async () => {
-      const data = await getMeals();
-      setMeals(data);
-    };
     results();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {
+      setMeals([])
+    };
   }, []);
+
+  const results = async () => {
+    const data = await getMeals();
+    setMeals(data);
+  };
 
   return (
     <div>

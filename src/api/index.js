@@ -98,5 +98,17 @@ const getAreas = async () => {
   return data.meals;
 };
 
-export { mealByName, getMeals, getAreas, mealDetails, latestMeals };
+const getIngredientImg = (ingredient) => {
+  let imgThumbnail = `${API.Image}/${ingredient}.png`;
+  return imgThumbnail;
+};
+
+export {
+  mealByName,
+  getMeals,
+  getAreas,
+  mealDetails,
+  latestMeals,
+  getIngredientImg,
+};
 export default API;

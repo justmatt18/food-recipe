@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import M from "materialize-css";
 
 const PopularIngredients = () => {
   const [imgs] = useState([
@@ -20,16 +21,20 @@ const PopularIngredients = () => {
     },
   ]);
 
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
+
   return (
     <div className="margin-top yellow darken-4 ingredients-section center-align">
       <h4 className="brown-text text-darken-4">
         <span>Popular Ingredients</span>
       </h4>
       <div className="row container">
-        {imgs.map((img) => (
-          <div className="col s12 m5 l3">
+        {imgs.map((img, index) => (
+          <div key={index} className="col s12 m5 l3">
             <img
-              className="responsive-img"
+              className="materialboxed responsive-img"
               src={img.img}
               alt={img.ingredient}
             />

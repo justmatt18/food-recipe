@@ -21,6 +21,10 @@ a.view-recipe:hover {
   margin: 2rem auto 2rem;
 }
 
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
 .ingredients-section {
   margin: 5em auto 3em;
   padding-top: 1em;

@@ -17,15 +17,15 @@ const SearchBar = () => {
   return (
     <>
       <nav>
-        <div class="nav-wrapper brown darken-2">
+        <div className="nav-wrapper brown darken-2">
           <div className="container">
-            <Link to="/" class="brand-logo">
+            <Link to="/" className="brand-logo">
               <span>Matty Recipes</span>
             </Link>
-            <Link to="/" data-target="mobile-demo" class="sidenav-trigger">
-              <i class="material-icons">menu</i>
+            <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
             </Link>
-            <ul class="right hide-on-med-and-down">
+            <ul className="right hide-on-med-and-down">
               <li>
                 <form onSubmit={toSearchPage}>
                   <input
@@ -51,7 +51,7 @@ const SearchBar = () => {
         </div>
       </nav>
 
-      <ul class="sidenav" id="mobile-demo">
+      <ul className="sidenav" id="mobile-demo">
         <li>
           <Link to="/">Home</Link>
         </li>
