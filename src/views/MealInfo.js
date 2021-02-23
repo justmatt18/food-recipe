@@ -38,7 +38,7 @@ const MealInfo = () => {
 
   return (
     <div className="container brown-text text-darken-2">
-      <div className="margin-tb row center-align mb-3">
+      <div className="margin-tb row center-align mb-3 meal-info">
         {meal.length !== 0 ? (
           <div className="col s12 m4">
             <h4>
@@ -64,32 +64,29 @@ const MealInfo = () => {
           )}
         </div>
       </div>
-      <div className="row center-align">
-        <div className="col s12 m7">
-          <div className="row center-align">
-            <div className="col">
-              Demo
-              <div className="video-container">
-                <h4>
-                  <span>Demo</span>
-                </h4>
-                <ReactPlayer
-                  url={meal.strYoutube}
-                  width="640px"
-                  height="360px"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col s12 m5">
+      <div className="row left-align">
+        <div className="col s12">
           <h4>
             <span>Instructions</span>
           </h4>
-          <h4 className="brown-text margin-tb">Instructions</h4>
-          <p className="margin-tb mb-3">
-            <span>{meal.strInstructions}</span>
-          </p>
+          <p>{meal.strInstructions}</p>
+        </div>
+      </div>
+      <div className="row left-align">
+        <div className="col s12">
+          <h4>
+            <span>Demo</span>
+          </h4>
+          <div className="player-wrapper">
+            <ReactPlayer
+              className="react-player"
+              url={meal.strYoutube}
+              width="100%"
+              height="100%"
+              pip="true"
+              stopOnUnmount={false}
+            />
+          </div>
         </div>
       </div>
     </div>

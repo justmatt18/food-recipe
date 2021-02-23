@@ -53,6 +53,18 @@ const SearchBar = () => {
 
       <ul className="sidenav" id="mobile-demo">
         <li>
+          <form onSubmit={toSearchPage}>
+            <input
+              className="mobile-input input-field"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              placeholder="Search for a Meal..."
+              style={{ paddingLeft: 25 }}
+            />
+          </form>
+        </li>
+        <li>
           <Link to="/">Home</Link>
         </li>
         <li>

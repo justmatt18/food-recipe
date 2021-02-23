@@ -6,7 +6,7 @@ const Ingredient = ({ ingredient }) => {
     M.AutoInit();
   }, []);
   return (
-    <div className="col s12 m3">
+    <div className="col s12 m4 l3 xl2">
       <img
         className="materialboxed responsive-img"
         src={ingredient.img}

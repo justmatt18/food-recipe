@@ -47,3 +47,27 @@ p span {
 .input-field {
   color: white;
 }
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.meal-info {
+  max-height: 90vh;
+}
+
+.mobile-input {
+  color: brown;
+}
+
+.border-btm {
+  border-bottom: 1px solid #ffff00 !important;
+  box-shadow: 0 1px 0 0 #ffd600 !important;
+}
