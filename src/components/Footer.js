@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="page-footer brown darken-4 ">
       <div className="container">
-        <div className="row center-alignw">
+        <div className="row center-align">
           <div className="col l6 s12">
             <h5 className="white-text">Matty Food Recipes</h5>
             <p className="grey-text text-lighten-4">
