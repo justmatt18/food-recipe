@@ -41,10 +41,7 @@ const SearchBar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/">Ingredients</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
+                <Link to="/ingredients">Ingredients</Link>
               </li>
             </ul>
           </div>
@@ -68,10 +65,7 @@ const SearchBar = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">Ingredients</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
+          <Link to="/ingredients">Ingredients</Link>
         </li>
       </ul>
     </>

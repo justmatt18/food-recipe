@@ -15,7 +15,7 @@ const Meal = ({ meal }) => {
           {/* <span className="card-title">{meal.strMeal}</span> */}
         </div>
         <div className="card-content">
-          <span className="cart-title activator brown-text text-lighten-1">
+          <span className="cart-title activator brown-text text-lighten-1 truncate ">
             {meal.strMeal}
             <i className="material-icons right">more_vert</i>
           </span>

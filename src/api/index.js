@@ -86,8 +86,8 @@ const latestMeals = [
 ];
 
 // search meal name
-const mealByName = async () => {
-  const res = await fetch(API.searchByName);
+const searchMealByName = async (meal) => {
+  const res = await fetch(`${API.searchByName}${meal}`);
   const data = await res.json();
   return data.meals;
 };
@@ -96,7 +96,7 @@ const mealByName = async () => {
 const mealDetails = async (id) => {
   const res = await fetch(`${API.mealDetails}${id}`);
   const data = await res.json();
-  return data.meals[0];
+  return data;
 };
 
 //fetch 8 random meals from API
@@ -128,7 +128,7 @@ const getIngredientImg = (ingredient) => {
 };
 
 export {
-  mealByName,
+  searchMealByName,
   getMeals,
   getAreas,
   mealDetails,

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const IngredientMeals = () => {
+const IngredientMeal = () => {
+  let { id } = useParams();
+
   return (
     <div className="container">
       <div className="row">
@@ -18,4 +21,4 @@ const IngredientMeals = () => {
   );
 };
 
-export default IngredientMeals;
+export default IngredientMeal;

@@ -3,11 +3,11 @@ import Ingredient from "./Ingredient";
 
 const Ingredients = ({ ingredients }) => {
   return (
-    <div className="row">
-      {ingredients.map((ingredient) => (
-        <Ingredient ingredient={ingredient} />
+    <>
+      {ingredients.map((ingredient, index) => (
+        <Ingredient key={index} ingredient={ingredient} />
       ))}
-    </div>
+    </>
   );
 };
 

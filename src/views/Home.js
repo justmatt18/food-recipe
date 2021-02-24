@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     results();
     return () => {
-      setMeals([])
+      setMeals([]);
     };
   }, []);
 

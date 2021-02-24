@@ -5,9 +5,9 @@ import Footer from "../components/Footer";
 // Format
 const Home = lazy(() => import("../views/Home"));
 const MealInfo = lazy(() => import("../views/MealInfo"));
-const Search = lazy(() => import("../views/Search"));
-const About = lazy(() => import("../views/About"));
+const SearchResult = lazy(() => import("../views/SearchResult"));
 const SearchBar = lazy(() => import("../components/SearchBar"));
+const Ingredients = lazy(() => import("../views/IngredientMeal"));
 
 const AppRouter = () => {
   return (
@@ -17,8 +17,8 @@ const AppRouter = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/meal/:id" component={MealInfo} />
-          <Route path="/search/q=:param" component={Search} />
-          <Route path="/about" component={About} />
+          <Route path="/search/q=:param" component={SearchResult} />
+          <Route path="/ingredients/:id" component={Ingredients} />
         </Switch>
         <Footer />
       </Suspense>

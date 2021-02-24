@@ -3,45 +3,56 @@ import { useParams } from "react-router-dom";
 import { getIngredientImg, mealDetails } from "../api";
 import Ingredients from "../components/Ingredients";
 import Preloader from "../components/Preloader";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 
 const MealInfo = () => {
-  const [meal, setMeal] = useState([]);
+  const [meal, setMeal] = useState({});
   const [ingredients, setIngredients] = useState([]);
   let { id } = useParams();
+
   useEffect(() => {
+    const getMeal = async () => {
+      let mealInfo = await mealDetails(id);
+      setMeal(mealInfo.meals[0]);
+    };
     getMeal();
-    getIngredients();
-    // getIngredients();
+    getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [meal]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
-  const getMeal = async () => {
-    let mealInfo = await mealDetails(id);
-    setMeal(mealInfo);
-    console.table(meal);
+  const getData = async () => {
+    console.log(meal);
+    let data = [];
+    let i = 1;
+    for (i; i <= 20; i++) {
+      let str = meal[`strIngredient${i}`];
+      console.log(str);
+      const item = {
+        name: meal[`strIngredient${i}`],
+        measure: meal[`strMeasure${i}`],
+        img: getIngredientImg(meal[`strIngredient${i}`]),
+      };
+      data.push(item);
+      i += 1;
+    }
+    console.table(data);
+    return setIngredients(data);
   };
 
-  const getIngredients = async () => {
-    let temp = [];
-    for (let i = 1; i <= 20; i++) {
-      let ingredientName = await meal[`strIngredient${i}`];
-      if (ingredientName) {
-        let measure = await meal[`strMeasure${i}`];
-        let img = getIngredientImg(ingredientName);
-        const item = { name: ingredientName, measure: measure, img: img };
-        temp.push(item);
-      }
-    }
-    setIngredients(temp);
+  const isEmpty = () => {
+    return Object.keys(meal).length !== 0;
   };
 
   return (
     <div className="container brown-text text-darken-2">
-      <div className="margin-tb row center-align mb-3 meal-info">
-        {meal.length !== 0 ? (
-          <div className="col s12 m4">
-            <h4>
+      <div className="margin-tb row  mb-3 meal-info">
+        {isEmpty ? (
+          <div className="col s12 m5 push-m3 mb-3">
+            <h4 className="center-align">
               <span>{meal.strMeal}</span>
             </h4>
             <img
@@ -53,15 +64,15 @@ const MealInfo = () => {
         ) : (
           <Preloader />
         )}
-        <div className="col s12 m8 center-align">
-          <h4>
+      </div>
+      <div className="row">
+        <div className="col s12">
+          <h4 className="left-align">
             <span>Ingredients</span>
           </h4>
-          {ingredients.length !== 0 ? (
+          <div className="center-align">
             <Ingredients ingredients={ingredients} />
-          ) : (
-            <Preloader />
-          )}
+          </div>
         </div>
       </div>
       <div className="row left-align">
@@ -83,7 +94,7 @@ const MealInfo = () => {
               url={meal.strYoutube}
               width="100%"
               height="100%"
-              pip="true"
+              pip={true}
               stopOnUnmount={false}
             />
           </div>
