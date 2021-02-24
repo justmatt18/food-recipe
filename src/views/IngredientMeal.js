@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 
 const IngredientMeal = () => {
-  let { id } = useParams();
-
   return (
     <div className="container">
       <div className="row">
