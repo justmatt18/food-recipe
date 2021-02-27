@@ -13,6 +13,9 @@ const IngredientMeal = () => {
   const [ingredient, setIngredient] = useState({});
   const { id } = useParams();
 
+  //TODO: Need to refarcor 'prev' and 'next' button using class={}
+  // ? Disable the "prev" or "next" if index is the first and last element
+
   useEffect(() => {
     getIngredients();
     // setIngredientId(id);
