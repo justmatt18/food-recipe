@@ -48,7 +48,7 @@ const MealInfo = () => {
   };
 
   return (
-    <div className="container brown-text text-darken-2">
+    <div className="container brown-text text-darken-2 mb-3">
       <div className="margin-tb row  mb-3 meal-info">
         {isEmpty ? (
           <div className="col s12 m5 push-m3 mb-3">

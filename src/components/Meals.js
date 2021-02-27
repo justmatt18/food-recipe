@@ -3,7 +3,7 @@ import Meal from "./Meal";
 
 const Meals = ({ meals }) => {
   return (
-    <div className="container">
+    <div>
       <div className="row margin-tb">
         {meals.map((meal) => (
           <Meal key={meal.idMeal} meal={meal} />

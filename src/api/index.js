@@ -8,6 +8,7 @@ const API = {
   byCategory: "https://www.themealdb.com/api/json/v1/1/filter.php?c=",
   byArea: "https://www.themealdb.com/api/json/v1/1/filter.php?a=",
   Image: "https://www.themealdb.com/images/ingredients",
+  filterByIngredient: "https://www.themealdb.com/api/json/v1/1/filter.php?i=",
 };
 
 const latestMeals = [
@@ -127,6 +128,19 @@ const getIngredientImg = (ingredient) => {
   return imgThumbnail;
 };
 
+const listOfIngredients = async () => {
+  const res = await fetch(API.ingredients);
+  const data = await res.json();
+  return data.meals;
+};
+
+const filterByMainIngredient = async (ingredientName) => {
+  const res = await fetch(`${API.filterByIngredient}${ingredientName}`);
+  const data = await res.json();
+  console.log(data);
+  return data.meals;
+};
+
 export {
   searchMealByName,
   getMeals,
@@ -134,5 +148,7 @@ export {
   mealDetails,
   latestMeals,
   getIngredientImg,
+  listOfIngredients,
+  filterByMainIngredient,
 };
 export default API;

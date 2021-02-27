@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { searchMealByName } from "../api";
 import Meals from "../components/Meals";
+import Preloader from "../components/Preloader";
 
 const SearchResult = () => {
   const [meals, setMeals] = useState([]);
@@ -22,10 +23,10 @@ const SearchResult = () => {
       <div className="container">
         {meals.length > 0 ? (
           <p className="brown-text text-darken-2">
-            <span>{`${meals.length} meals found for ${param}`}</span>
+            <span>{`${meals.length} meals found for "${param}"`}</span>
           </p>
         ) : (
-          ""
+          <Preloader />
         )}
       </div>
       <div className="row">
