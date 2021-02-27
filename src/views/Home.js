@@ -21,23 +21,34 @@ const Home = () => {
     setMeals(data);
   };
 
+  const isEmpty = (obj) => {
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) return false;
+    }
+    return true;
+  };
+
   return (
     <div>
       <div className="latestmeals-section center-align">
         <h4 className="brown-text text-darken-4">
           <span>Latest Meals</span>
         </h4>
-        <Meals meals={latestMeals} />
+        <div className="container">
+          <Meals meals={latestMeals} />
+        </div>
       </div>
       <PopularIngredients />
-      {meals.length !== 8 ? (
+      {isEmpty(meals) ? (
         <Preloader />
       ) : (
         <>
           <h4 className="brown-text text-darken-4 center-align">
             <span>Random Meals</span>
           </h4>
-          <Meals meals={meals} />
+          <div className="container">
+            <Meals meals={meals} />
+          </div>
         </>
       )}
     </div>
