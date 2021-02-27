@@ -29,7 +29,7 @@ const SearchResult = () => {
           <Preloader />
         )}
       </div>
-      <div className="row">
+      <div className="row container">
         <Meals meals={meals} />
       </div>
     </div>
