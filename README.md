@@ -8,17 +8,17 @@
 
 **TODOS**
 
-- Ongoing ~
+- Ongoing ~ :construction:
 - Pending -
-- Done /
+- Done :heavy_check_mark:
 
-| Pages            | Status  | Remarks |
-| ---------------- | :-----: | ------: |
-| Home             |  done   |       / |
-| Search           | pending |       ~ |
-| Meal Info        | pending |       x |
-| About            | pending |       x |
-| Ingredient Meals | ongoing |       ~ |
+| Pages            |   Status   |            Remarks |
+| ---------------- | :--------: | -----------------: |
+| Home             |    done    | :heavy_check_mark: |
+| Search           |    done    | :heavy_check_mark: |
+| Meal Info        |    done    | :heavy_check_mark: |
+| About            | x remove x |                :x: |
+| Ingredient Meals |  ongoing   |     :construction: |
 
 ## detailed todos
 
@@ -26,12 +26,12 @@
 
 - Latest Meals Section
 
-[ ~ ] `Search` Bar
+[ :heavy_check_mark:] `Search` Bar
 
 - redirect to route _/search/:param_
 - show (not found or meals)
 
-[ x ] `MealInfo` Page
+[ :heavy_check_mark: ] `MealInfo` Page
 
 1. Layout (component)
 
@@ -40,7 +40,7 @@
 - Youtube Embed
 - Instruction
 
-[ x ] `IngredientMeals` Page
+[ :construction: ] `IngredientMeals` Page
 
 1. Layout (component)
 
