@@ -22,8 +22,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link className="border-btm white-text" to="/">
-                  Categories
+                <Link className="border-btm white-text" to="/ingredients/1">
+                  Ingredients
                 </Link>
               </li>
             </ul>
