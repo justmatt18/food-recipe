@@ -67,7 +67,7 @@ const MealInfo = () => {
       </div>
       <div className="row">
         <div className="col s12">
-          <h4 className="left-align">
+          <h4 className="center-align">
             <span>Ingredients</span>
           </h4>
           <div className="center-align">
@@ -75,7 +75,7 @@ const MealInfo = () => {
           </div>
         </div>
       </div>
-      <div className="row left-align">
+      <div className="row center-align">
         <div className="col s12">
           <h4>
             <span>Instructions</span>
@@ -83,23 +83,25 @@ const MealInfo = () => {
           <p>{meal.strInstructions}</p>
         </div>
       </div>
-      <div className="row left-align">
-        <div className="col s12">
-          <h4>
-            <span>Demo</span>
-          </h4>
-          <div className="player-wrapper">
-            <ReactPlayer
-              className="react-player"
-              url={meal.strYoutube}
-              width="100%"
-              height="100%"
-              pip={true}
-              stopOnUnmount={false}
-            />
+      {meal.strYoutube && (
+        <div className="row center-align">
+          <div className="col s12">
+            <h4>
+              <span>Demo</span>
+            </h4>
+            <div className="player-wrapper">
+              <ReactPlayer
+                className="react-player"
+                url={meal.strYoutube}
+                width="100%"
+                height="100%"
+                pip={true}
+                stopOnUnmount={false}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

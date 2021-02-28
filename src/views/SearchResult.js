@@ -6,6 +6,7 @@ import Preloader from "../components/Preloader";
 
 const SearchResult = () => {
   const [meals, setMeals] = useState([]);
+  const [isEmpty, setIsEmpty] = useState([true]);
   let { param } = useParams();
 
   useEffect(() => {
@@ -15,18 +16,28 @@ const SearchResult = () => {
 
   const searchResult = async () => {
     const data = await searchMealByName(param);
-    return setMeals(data);
+    if (data) {
+      setIsEmpty(false);
+      return setMeals(data);
+    }
   };
 
   return (
     <div>
       <div className="container">
-        {meals.length > 0 ? (
+        {isEmpty && (
+          <p className="brown-text text-darken-2">
+            <span>{`No meals found for "${param}"`}</span>
+          </p>
+        )}
+        {meals && !isEmpty > 0 ? (
           <p className="brown-text text-darken-2">
             <span>{`${meals.length} meals found for "${param}"`}</span>
           </p>
         ) : (
-          <Preloader />
+          <div className="margin-tb mb-3">
+            {!meals && isEmpty && <Preloader />}
+          </div>
         )}
       </div>
       <div className="row container">

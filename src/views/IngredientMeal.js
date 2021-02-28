@@ -87,7 +87,7 @@ const IngredientMeal = () => {
       <div className="row">
         <div className="col s12">
           <h4 className="center-align">
-            <span>Ingredients</span>
+            <span>Meals</span>
           </h4>
           <div className="center-align">
             {!isEmpty(meals) ? <Meals meals={meals} /> : <Preloader />}

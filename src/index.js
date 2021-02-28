@@ -8,8 +8,6 @@ import "materialize-css/dist/js/materialize.min.js";
 import M from "materialize-css";
 import AppRouter from "./router";
 
-M.AutoInit();
-
 ReactDOM.render(
   <React.StrictMode>
     <AppRouter />
