@@ -4,8 +4,6 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
-// eslint-disable-next-line no-unused-vars
-import M from "materialize-css";
 import AppRouter from "./router";
 
 ReactDOM.render(
