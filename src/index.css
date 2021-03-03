@@ -71,3 +71,7 @@ p span {
   border-bottom: 1px solid #ffff00 !important;
   box-shadow: 0 1px 0 0 #ffd600 !important;
 }
+
+.disabled {
+  visibility: hidden;
+}
