@@ -137,7 +137,6 @@ const listOfIngredients = async () => {
 const filterByMainIngredient = async (ingredientName) => {
   const res = await fetch(`${API.filterByIngredient}${ingredientName}`);
   const data = await res.json();
-  console.log(data);
   return data.meals;
 };
 

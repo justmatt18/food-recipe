@@ -7,21 +7,19 @@ import {
 } from "../api";
 import Meals from "../components/Meals";
 import Preloader from "../components/Preloader";
+import { isEmpty } from "../utils";
 
 const IngredientMeal = () => {
   const [meals, setMeals] = useState([]);
   const [ingredient, setIngredient] = useState({});
   const { id } = useParams();
 
-  //TODO: Need to refarcor 'prev' and 'next' button using class={}
-  // ? Disable the "prev" or "next" if index is the first and last element
-
   useEffect(() => {
     getIngredients();
-    // setIngredientId(id);
     fetchMealsByIngredient();
+    console.log(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id, ingredient]);
+  }, [id]);
 
   const getIngredients = async () => {
     let data = await listOfIngredients();
@@ -30,15 +28,7 @@ const IngredientMeal = () => {
 
   const fetchMealsByIngredient = async () => {
     const data = await filterByMainIngredient(ingredient.strIngredient);
-    console.table(data);
     setMeals(data);
-  };
-
-  const isEmpty = (obj) => {
-    for (let key in obj) {
-      if (obj.hasOwnProperty(key)) return false;
-    }
-    return true;
   };
 
   return (
@@ -57,7 +47,7 @@ const IngredientMeal = () => {
               />
 
               <ul className="pagination center-align">
-                <li className="waves-effect">
+                <li className={id === "1" ? "disabled" : "waves-effect"}>
                   <Link to={`/ingredients/${1 * id - 1}`}>
                     <i className="material-icons">chevron_left</i>
                   </Link>

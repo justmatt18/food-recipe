@@ -4,6 +4,7 @@ import { getIngredientImg, mealDetails } from "../api";
 import Ingredients from "../components/Ingredients";
 import Preloader from "../components/Preloader";
 import ReactPlayer from "react-player/youtube";
+import { isEmpty } from "../utils";
 
 const MealInfo = () => {
   const [meal, setMeal] = useState({});
@@ -43,14 +44,10 @@ const MealInfo = () => {
     return setIngredients(data);
   };
 
-  const isEmpty = () => {
-    return Object.keys(meal).length !== 0;
-  };
-
   return (
     <div className="container brown-text text-darken-2 mb-3">
       <div className="margin-tb row  mb-3 meal-info">
-        {isEmpty ? (
+        {!isEmpty(meal) ? (
           <div className="col s12 m5 push-m3 mb-3">
             <h4 className="center-align">
               <span>{meal.strMeal}</span>

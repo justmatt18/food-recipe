@@ -4,6 +4,7 @@ import Preloader from "../components/Preloader";
 import { getMeals } from "../api";
 import PopularIngredients from "../components/PopularIngredients";
 import { latestMeals as latestFood } from "../api";
+import { isEmpty } from "../utils";
 
 const Home = () => {
   const [meals, setMeals] = useState([]);
@@ -19,13 +20,6 @@ const Home = () => {
   const results = async () => {
     const data = await getMeals();
     setMeals(data);
-  };
-
-  const isEmpty = (obj) => {
-    for (let key in obj) {
-      if (obj.hasOwnProperty(key)) return false;
-    }
-    return true;
   };
 
   return (
