@@ -16,7 +16,6 @@ const IngredientMeal = () => {
 
   useEffect(() => {
     getIngredients();
-    fetchMealsByIngredient();
     console.log(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
@@ -24,6 +23,7 @@ const IngredientMeal = () => {
   const getIngredients = async () => {
     let data = await listOfIngredients();
     setIngredient(data[id - 1]);
+    fetchMealsByIngredient();
   };
 
   const fetchMealsByIngredient = async () => {
