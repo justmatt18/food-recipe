@@ -16,7 +16,6 @@ const IngredientMeal = () => {
 
   useEffect(() => {
     getIngredients();
-    console.log(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
