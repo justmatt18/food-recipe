@@ -12,9 +12,6 @@ const Home = () => {
 
   useEffect(() => {
     results();
-    return () => {
-      setMeals([]);
-    };
   }, []);
 
   const results = async () => {

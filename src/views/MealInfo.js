@@ -15,9 +15,9 @@ const MealInfo = () => {
     const getMeal = async () => {
       let mealInfo = await mealDetails(id);
       setMeal(mealInfo.meals[0]);
+      getData();
     };
     getMeal();
-    getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [meal]);
 
@@ -26,12 +26,9 @@ const MealInfo = () => {
   }, []);
 
   const getData = async () => {
-    console.log(meal);
     let data = [];
     let i = 1;
     for (i; i <= 20; i++) {
-      let str = meal[`strIngredient${i}`];
-      console.log(str);
       const item = {
         name: meal[`strIngredient${i}`],
         measure: meal[`strMeasure${i}`],
@@ -40,7 +37,6 @@ const MealInfo = () => {
       data.push(item);
       i += 1;
     }
-    console.table(data);
     return setIngredients(data);
   };
 
