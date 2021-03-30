@@ -20,7 +20,7 @@ const SearchBar = () => {
         <div className="nav-wrapper brown darken-2">
           <div className="container">
             <Link to="/" className="brand-logo">
-              <span>Matty Recipes</span>
+              <span>Food Recipes</span>
             </Link>
             <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
               <i className="material-icons">menu</i>
@@ -73,5 +73,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-// show-on-medium-and-up
-// hide-on-med-and-down

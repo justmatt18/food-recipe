@@ -12,7 +12,6 @@ const Meal = ({ meal }) => {
             src={meal.strMealThumb}
             loading="lazy"
           />
-          {/* <span className="card-title">{meal.strMeal}</span> */}
         </div>
         <div className="card-content">
           <span className="cart-title activator brown-text text-lighten-1 truncate ">

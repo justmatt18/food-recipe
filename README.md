@@ -18,11 +18,11 @@
 | Search           |    done    | :heavy_check_mark: |
 | Meal Info        |    done    | :heavy_check_mark: |
 | About            | x remove x |                :x: |
-| Ingredient Meals |  ongoing   |     :construction: |
+| Ingredient Meals |  ongoing   | :heavy_check_mark: |
 
 ## detailed todos
 
-[ / ] `Home` Page
+[ :heavy_check_mark: ] `Home` Page
 
 - Latest Meals Section
 
@@ -40,7 +40,7 @@
 - Youtube Embed
 - Instruction
 
-[ :construction: ] `IngredientMeals` Page
+[ :heavy_check_mark: ] `IngredientMeals` Page
 
 1. Layout (component)
 
@@ -73,6 +73,6 @@ yarn add or npm install
 ```
 yarn start or npm run start
 
-
-'Happy Coding'
 ```
+
+_Happy Coding! :heart: :beer:_
