@@ -12,13 +12,12 @@
 - Pending -
 - Done :heavy_check_mark:
 
-| Pages            |   Status   |            Remarks |
-| ---------------- | :--------: | -----------------: |
-| Home             |    done    | :heavy_check_mark: |
-| Search           |    done    | :heavy_check_mark: |
-| Meal Info        |    done    | :heavy_check_mark: |
-| About            | x remove x |                :x: |
-| Ingredient Meals |  ongoing   | :heavy_check_mark: |
+| Pages            | Status  |            Remarks |
+| ---------------- | :-----: | -----------------: |
+| Home             |  done   | :heavy_check_mark: |
+| Search           |  done   | :heavy_check_mark: |
+| Meal Info        |  done   | :heavy_check_mark: |
+| Ingredient Meals | ongoing | :heavy_check_mark: |
 
 ## detailed todos
 
