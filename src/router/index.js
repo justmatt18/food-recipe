@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Preloader from "../components/Preloader";
 
 // Format
 const Home = lazy(() => import("../views/Home"));
@@ -12,7 +13,7 @@ const Footer = lazy(() => import("../components/Footer"));
 const AppRouter = () => {
   return (
     <Router basename={"/"}>
-      <Suspense fallback={"Fallback"}>
+      <Suspense fallback={<Preloader />}>
         <SearchBar />
         <Switch>
           <Route path="/" exact component={Home} />
